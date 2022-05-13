@@ -10,10 +10,16 @@ export class ProductsService {
 
   urlAPI = 'http://localhost:4201/products';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchProducts(){
     return this.http.get<Product[]>(this.urlAPI).pipe(catchError(err => {
+      return throwError(this.errorMessage(err.status));
+    }))
+  }
+
+  fetchProductById(id: number){
+    return this.http.get<Product>(`${this.urlAPI}/${id}`).pipe(catchError(err => {
       return throwError(this.errorMessage(err.status));
     }))
   }

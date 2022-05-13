@@ -15,7 +15,7 @@ export class ShopComponent implements OnInit {
   constructor(private productsSrv: ProductsService, private cartSrc: CartService) { }
 
   ngOnInit(): void {
-    this.fetchProducts()
+    this.fetchProducts();
   }
 
   fetchProducts(){

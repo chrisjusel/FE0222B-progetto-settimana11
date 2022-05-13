@@ -9,6 +9,7 @@
           <h5 class="card-text text-center">{{product.price}}€</h5>
           <div class="d-flex justify-content-around">
             <button class="btn btn-success" (click)="addItemToCart(product.id)">Aggiungi al carrello</button>
+            <button class="btn btn-danger" [routerLink]="['/detail/', product.id]">Dettagli</button>
           </div>
         </div>
       </div>

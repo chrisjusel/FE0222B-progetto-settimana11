@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Product } from 'src/app/interface/product';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-detail',
@@ -10,12 +11,22 @@ import { Product } from 'src/app/interface/product';
 })
 export class DetailComponent implements OnInit {
 
-  private product!: Product;
+  product!: Product | any;
   sub!: Subscription;
 
-  constructor(private router: ActivatedRoute) { }
+  constructor(private router: ActivatedRoute, private productsSrv: ProductsService) { }
 
   ngOnInit(): void {
+    this.sub = this.router.params.subscribe((params) => {
+      const id = +params['id'];
+      this.product = this.fetchProductById(id);
+    })
+  }
+
+  fetchProductById(id: number){
+    this.productsSrv.fetchProductById(id).subscribe((ris) => {
+      this.product = ris;
+    })
   }
 
 
