@@ -7,12 +7,14 @@ import { Product } from '../interface/product';
 export class CartService {
 
   private cartItems: Product[] = [];
+  cartItemCounter: number = 0;
 
   constructor() { }
 
   addItemToCart(item: Product){
     this.cartItems.push(item);
     console.log(this.cartItems);
+    this.cartItemCounter++;
   }
 
   getCartItems(){

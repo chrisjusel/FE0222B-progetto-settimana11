@@ -1,5 +1,5 @@
 img{
-  width: 5%;
+  max-width: 8%;
 }
 
 .price{
@@ -14,4 +14,9 @@ img{
 
 .itemName{
   border-bottom: 2px solid red;
+}
+
+ul{
+  border-bottom: 4px solid red;
+  border-top: 4px solid red;
 }
