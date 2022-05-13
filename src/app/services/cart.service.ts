@@ -17,6 +17,11 @@ export class CartService {
     this.cartItemCounter++;
   }
 
+  deleteItemFromCart(i: number){
+    this.cartItems.splice(i, 1)
+    console.log(this.cartItems);
+  }
+
   calculateTotal(){
     let totalPrice = 0;
     this.cartItems.forEach((el) => {
