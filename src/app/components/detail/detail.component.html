@@ -1,1 +1,17 @@
-<p>detail works!</p>
+<div class="container mt-5" *ngIf="product; else loading">
+  <div class="d-flex wrapper">
+    <img src="{{ product.image }}" />
+    <div class="mx-5">
+      <h1>{{ product.name }}</h1>
+      <p>{{ product.description }}</p>
+      <h5 id="price">{{ product.price }}€</h5>
+      <button class="btn btn-primary">Aggiungi al carrello</button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="container d-flex justify-content-center mt-5">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</ng-template>
