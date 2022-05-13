@@ -16,7 +16,53 @@
       </li>
     </div>
   </ul>
-  <div>
+  <div class="d-flex justify-content-between mt-3">
+    <div>
+      <h2>Dati di spedizione</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div>
+              <form (ngSubmit)="submit()" #f="ngForm">
+                <div ngModelGroup="shippingInfo" id="shippingInfo" #shippingGroup="ngModelGroup">
+
+                  <div class="d-flex">
+                    <div>
+                      <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input type="text" name="shippingName" id="shippingName" class="form-control" required ngModel>
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label for="lastname">Cognome</label>
+                        <input type="text" name="shippingLastname" id="shippingLastname" class="form-control" required ngModel>
+                      </div>
+                    </div>
+
+                    <div class="mx-3">
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="shippingemail" id="shippingEmail" class="form-control" required ngModel>
+                      </div>
+
+                      <div class="form-group mt-3">
+                        <label for="address">Indirizzo</label>
+                        <input type="text" name="shippingAddress" id="shippingAddress" class="form-control" required ngModel>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <button class="btn btn-success mt-3" [disabled]="f.invalid" type="submit">Procedi all'acquisto</button>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <h2 class="text-end">Totale: €{{calculateTotal()}}</h2>
   </div>
 </div>

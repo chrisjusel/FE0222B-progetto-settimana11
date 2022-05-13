@@ -6,7 +6,7 @@ import { Product } from '../interface/product';
 })
 export class CartService {
 
-  private cartItems: Product[] = [];
+  cartItems: Product[] = [];
   cartItemCounter: number = 0;
 
   constructor() { }
@@ -15,10 +15,6 @@ export class CartService {
     this.cartItems.push(item);
     console.log(this.cartItems);
     this.cartItemCounter++;
-  }
-
-  getCartItems(){
-    return this.cartItems;
   }
 
   calculateTotal(){

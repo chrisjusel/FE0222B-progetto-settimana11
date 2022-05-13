@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { Product } from 'src/app/interface/product';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -9,19 +10,24 @@ import { Product } from 'src/app/interface/product';
 })
 export class CartComponent implements OnInit {
 
-  private cartItems!: Product[];
   constructor(private cartSrv: CartService) { }
 
+  @ViewChild('f', {static: true}) form!: NgForm
+
   ngOnInit(): void {
-    this.cartItems = this.cartSrv.getCartItems();
-    console.log("cartitems" + this.cartItems.length);
   }
 
   getCartItems(){
-    return this.cartItems;
+    return this.cartSrv.cartItems;
   }
 
   calculateTotal(){
     return this.cartSrv.calculateTotal();
+  }
+
+  submit(){
+    this.cartSrv.cartItems = [];
+    this.cartSrv.cartItemCounter = 0;
+    alert("Ordine effettuato con successo");
   }
 }
