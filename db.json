@@ -2,47 +2,38 @@
   "products": [
     {
       "id": 1,
-      "name": "Phone XL",
-      "price": 799,
-      "description": "Uno dei migliori smartphone in commercio, con schermo ampio"
+      "name": "Realme 8 Smartphone",
+      "price": 220,
+      "description": "Uno dei migliori smartphone in commercio, con schermo ampio",
+      "image": "https://m.media-amazon.com/images/I/61QJikvyF2L._AC_SL1500_.jpg"
     },
     {
       "id": 2,
-      "name": "Phone Mini",
-      "price": 699,
-      "description": "Ha un'ottima fotocamera anche se piccolo"
+      "name": "iPhone 12",
+      "price": 600,
+      "description": "Ha un'ottima fotocamera anche al buio",
+      "image": "https://m.media-amazon.com/images/I/71fuALlOJ7L._AC_SL1500_.jpg"
     },
     {
       "id": 3,
-      "name": "Phone Standard",
+      "name": "Samsung Galaxy S22 Ultra",
       "price": 299,
-      "description": ""
+      "description": "il top del top",
+      "image": "https://m.media-amazon.com/images/I/81DhvHCB3fL._AC_SL1500_.jpg"
     },
     {
+      "id": 4,
       "name": "OnePlus Nord",
       "price": 500,
-      "description": "Il mio telefono",
-      "id": 4
+      "description": "Fuori dagli schemi",
+      "image": "https://m.media-amazon.com/images/I/71D6PFi7QFL._AC_SL1500_.jpg"
     },
     {
-      "id": 11,
-      "name": "iPhone12",
-      "price": 649,
-      "description": "Il telefono più bello di Napoli"
-    }
-  ],
-  "prices": [
-    {
-      "type": "1-Giorno",
-      "price": 25.99
-    },
-    {
-      "type": "2-Giorni",
-      "price": 9.99
-    },
-    {
-      "type": "5-Giorni",
-      "price": 2.99
+      "id": 5,
+      "name": "Xiaomi Mi 12",
+      "price": 699,
+      "description": "L'innovazione",
+      "image": "https://m.media-amazon.com/images/I/51R3hIaiTRL._AC_SX679_.jpg"
     }
   ]
 }

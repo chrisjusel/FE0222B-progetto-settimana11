@@ -1,0 +1,19 @@
+<div class="container mt-3">
+  <h1>Carrello</h1>
+  <ul class="list-group">
+    <div *ngFor="let item of getCartItems()">
+      <li class="list-group-item d-flex justify-content-between mb-2" >
+        <div class="d-flex">
+          <img src="{{item.image}}">
+          <div class="mx-4">
+            <h5 class="itemName">{{item.name}}</h5>
+            <p class>{{item.description}}</p>
+          </div>
+        </div>
+        <div class="mt-4 p-2">
+          <span class="badge bg-danger">{{item.price}}€</span>
+        </div>
+      </li>
+    </div>
+  </ul>
+</div>
