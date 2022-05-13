@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
 
   deleteItemFromCart(i: number){
     this.cartSrv.deleteItemFromCart(i);
+    this.cartSrv.cartItemCounter--;
   }
 
   calculateTotal(){
