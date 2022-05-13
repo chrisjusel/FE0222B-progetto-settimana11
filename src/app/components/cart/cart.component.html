@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3" *ngIf="getCartItems().length != 0; else cartIsEmpty">
   <h1>Carrello</h1>
   <ul class="list-group">
     <div *ngFor="let item of getCartItems()">
@@ -16,4 +16,14 @@
       </li>
     </div>
   </ul>
+  <div>
+    <h2 class="text-end">Totale: €{{calculateTotal()}}</h2>
+  </div>
 </div>
+
+<ng-template #cartIsEmpty>
+  <div class="container text-center mt-5">
+    <h1>Ops, il carrello è vuoto, aggiungi qualcosa!</h1>
+    <button type="button" class = "btn btn-danger mt-5 backToShop" [routerLink]="['/']" routerLinkActive="active">Torna allo shop</button>
+  </div>
+</ng-template>

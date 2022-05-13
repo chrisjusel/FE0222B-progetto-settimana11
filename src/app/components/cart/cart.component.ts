@@ -14,9 +14,14 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems = this.cartSrv.getCartItems();
+    console.log("cartitems" + this.cartItems.length);
   }
 
   getCartItems(){
     return this.cartItems;
+  }
+
+  calculateTotal(){
+    return this.cartSrv.calculateTotal();
   }
 }
